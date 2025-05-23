@@ -1,0 +1,194 @@
+---
+import Head from "../../components/head.astro"
+---
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noticias</title>
+    <link rel="stylesheet" href="/noticias.css" />
+</head>
+
+<body>
+     <Head></Head>
+    <section class="noticias">
+        <h2>Últimas Noticias</h2>
+        <div class="contenedor-noticias">
+            <article class="noticia">
+                <img src=" /noticia 1.jpeg" alt="Noticia 1" />
+                <h3>El pianista Arthur Hanlon une continentes con grandes voces de Latinoamérica en su álbum '2 Manos, 1
+                    Mundo'</h3>
+                <p>En un mundo dividido geográficamente por continentes, el arte y la música se convierten en ese
+                    pegamento que mantiene conectadas a las personas y a las culturas. Prueba de esto es la vida y obra
+                    de Arthur Hanlon, un compositor y pianista norteamericano que conoció la música en Detroit, pero se
+                    enamoró de ella en Nueva York, cuando los ritmos latinos entraron en sus oídos y, desde entonces, lo
+                    acompañan en cada canción y nota de piano que toca. </p>
+                <a
+                    href="https://www.eltiempo.com/cultura/musica-y-libros/el-pianista-arthur-hanlon-conecta-continentes-en-su-album-2-manos-1-mundo-3444872 ">Leer
+                    más</a>
+            </article>
+            <article class="noticia">
+                <img src=" /noticias 2.jpg" alt="Noticia 2" />
+                <h3>Fender y Brad Paisley han colaborado en la creación de la guitarra 1967 “Lost Paisley” Telecaster
+                </h3>
+                <p>Brad consiguió unas láminas originales de los años 60 con ese estampado Paisley azul, y además de
+                    utilizarlas para aplicar ese acabado a una de sus Telecasters de 1967, ha colaborado con la Fender
+                    Custom Shop para lanzar esta nueva nueva Limited Edition Brad Paisley 1967 “Lost Paisley”
+                    Telecaster. Una guitarra que estará disponible en dos ediciones, con 19 construidas personalmente
+                    por Paisley, y 67 producidas por la Fender Custom Shop.</p>
+                <a
+                    href="https://www.guitarristas.info/noticias/fender-brad-paisley-han-colaborado-creacion-guitarra-1967-lost-paisley-telecaster/11454">Leer
+                    más</a>
+            </article>
+            <article class="noticia">
+                <img src=" /noticia 3.avif" alt="Noticia 3" />
+                <h3>Título de la noticia 3</h3>
+                <p>Bad Bunny se presentará a finales de 2025 en Ciudad de México como parte de la gira promocional de su
+                    álbum Debí Tirar Más Fotos. El puertorriqueño ha anunciado conciertos el 10 y 11 de diciembre en el
+                    Foro GNP y, tras la alta demanda del público, ha agregado dos fechas más, el 12 y 15 de diciembre.
+                </p>
+                <a href="https://elpais.com/mexico/gente/2025-05-12/bad-bunny-en-ciudad-de-mexico-nuevas-fechas-precios-y-lo-que-hay-que-saber.html">Leer más</a>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>
+<style>
+    /* Reset base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #101828; /* fondo oscuro */
+  color: #fff;
+}
+
+/* Sección de noticias */
+.noticias {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+header {
+    background-color: #141218;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.cabecera {
+    margin-top: 20px;
+    margin-left: 138px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+}
+
+.encabesado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.bicon {
+    border-radius: 20%;
+
+}
+
+.icon {
+    border-radius: 52%;
+    width: 100px;   
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo-empresa {
+    height: 80px;
+    border-radius: 20%;
+    margin-right: 10px;
+}
+
+.marca {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    margin-top: 20px;
+}
+
+.marca .acento {
+    color: #a855f7;
+}
+
+.noticias h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #a95eff; /* morado vibrante */
+}
+
+/* Contenedor de noticias con grid responsivo */
+.contenedor-noticias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Estilo de cada noticia */
+.noticia {
+  background: #1a1721; /* tarjeta oscura */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.noticia:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(169, 94, 255, 0.3); /* efecto hover con sombra morada */
+}
+
+/* Imagen de la noticia */
+.noticia img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 2px solid #a95eff;
+}
+
+/* Título de la noticia */
+.noticia h3 {
+  padding: 15px;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+/* Texto de la noticia */
+.noticia p {
+  padding: 0 15px 10px;
+  color: #cccccc;
+}
+
+/* Enlace de lectura */
+.noticia a {
+  display: inline-block;
+  margin: 0 15px 15px;
+  color: #a95eff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.noticia a:hover {
+  text-decoration: underline;
+}
+
+</style>
