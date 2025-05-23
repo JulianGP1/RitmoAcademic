@@ -1,17 +1,18 @@
 ---
 import Head from "../../components/head.astro"
+import Layout from "../../layouts/Layout.astro"
+
 ---
 <!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpg" href="/icon.png" />
-    <link rel="stylesheet" href="/registro.css" />
-    <meta name="generator" content="Astro" />
-    <title>RitmoAcademic</title>
-</head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>RitmoAcademic</title>
+	</head>
 
 <body>
    
@@ -125,7 +126,7 @@ import Head from "../../components/head.astro"
 }
 
 header {
-    background-color: #101828;
+    background-color:#0f0d12;
     color: #fff;
     padding: 1em 0;
     text-align: center;
