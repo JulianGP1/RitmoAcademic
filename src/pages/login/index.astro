@@ -1,23 +1,81 @@
 ---
-import Head from "../../components/head.astro"
- 
+import Head from "../../components/head.astro";
+import "../../styles/global.css";
+import Footer from "../../components/Footer.astro";
 ---
- 
- 
- <Head></Head>
-<body>
-    <div class="login-box mx-[30%] bg-blue-300 justify-center items-center">
-        <h2 class=" ">Inicio de sesión</h2>
-        <input type="text" placeholder="Nombre de usuario">
-        <input type="password" placeholder="Contraseña">
-        <a href="#">¿Olvidó su contraseña?</a>
-        <button>Iniciar</button>
-        <div class="register-link">
-            <a href="#">Registarse</a>
+
+<Head />
+<body class="bg-[#0f0d12] h-screen">
+  <div class="bg-[#0f0d12] pb-28 pt-28">
+    <div class="w-full max-w-md p-8 rounded-2xl mx-[35%] bg-[#141218] text-purple-400">
+      <h2 class="text-2xl font-bold text-center mb-6">Inicio de sesión</h2>
+
+      <form id="loginForm" class="space-y-4">
+        <input
+          type="text"
+          id="username"
+          placeholder="Nombre de usuario"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <div class="text-right">
+          <a href="#" class="text-sm text-blue-500 hover:underline">¿Olvidó su contraseña?</a>
         </div>
 
+        <button
+          type="submit"
+          class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition duration-200"
+        >
+          Iniciar sesión
+        </button>
+      </form>
 
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">
+          ¿No tienes cuenta?
+          <a href="/registro" class="text-blue-500 hover:underline">Regístrate</a>
+        </p>
+      </div>
     </div>
+  </div>
+
+  <!-- JS: Validación desde localStorage -->
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+
+        const datosGuardados = localStorage.getItem("usuarioRegistrado");
+
+        if (!datosGuardados) {
+          alert("No hay ningún usuario registrado.");
+          return;
+        }
+
+        const usuario = JSON.parse(datosGuardados);
+
+        if (usuario.nombre === username && usuario.contrasena === password) {
+          alert("Inicio de sesión exitoso. Bienvenido " + usuario.nombre + " 👋");
+        window.location.href = "/ ";  
+        } else {
+          alert("Nombre de usuario o contraseña incorrectos.");
+        }
+      });
+    });
+  </script>
 </body>
 
- 
+<Footer />
