@@ -1,7 +1,9 @@
 ---
 import "../styles/global.css"
+ 
+
 ---
- <head>
+<head>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 		<meta charset="UTF-8" />
@@ -37,8 +39,18 @@ import "../styles/global.css"
 						>Noticias</a
 					>
 				 
-					<a href="/ " 	class="text-white border rounded-sm p-2 ml-[180%] border-purple-400 hover:text-purple-400 font-semibold"> Salir </a>
-				</nav>
+   <button   id="logoutBtn" class="bg-purple-600 ml-[150%] px-4 py-2 rounded hover:bg-purple-800"  >
+    Salir
+  </button>				</nav> 
 				</a
 			>
 		</header>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("logoutBtn");
+    btn?.addEventListener("click", () => {
+      localStorage.clear(); // Borra todos los valores
+      window.location.href = "/login"; // Redirige a la página de login
+    });
+  });
+</script>

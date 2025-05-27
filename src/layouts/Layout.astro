@@ -1,6 +1,7 @@
 ---
+import HeadAdmin from "../components/HeadAdmin.astro";
 import Footer from "../components/Footer.astro";
-import Header from "../components/head.astro";
+import Head from "../components/head.astro";
 import Cursos from "../components/cardscursos.astro";
 import "../styles/global.css";
 ---
@@ -17,7 +18,24 @@ import "../styles/global.css";
 		<title>RitmoAcademic</title>
 	</head>
 	<body class="bg-[#0f0d12] bg-fixed text-white font-sans">
-		<Header />
+		<div id="admin-header" style="display: none;">
+  <HeadAdmin />
+</div>
+<div id="user-header" style="display: none;">
+  <Head />
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("usuario") || localStorage.getItem("token") || localStorage.getItem("status");
+    
+    if (!token) {
+      document.getElementById("admin-header").style.display = "block";
+    } else {
+      document.getElementById("user-header").style.display = "block";
+    }
+  });
+</script>
 
 		<section class="flex px-[10%] mt-24">
 		<div class="w-[50%]">

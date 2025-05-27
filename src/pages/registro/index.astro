@@ -3,15 +3,14 @@ import Head from "../../components/head.astro";
 import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+ 
 
 ---
 
 <Head />
 <body class="bg-[#0f0d12] h-screen">
   <div class="bg-[#0f0d12] pb-28 pt-28">
-    <div class="w-full max-w-md p-8 rounded-2xl mx-[35%] bg-[#141218] text-purple-400">
+    <div class="w-full max-w-md p-8 rounded-2xl mx-[35%] bg-[#141218] text-white">
       <h2 class="text-2xl font-bold text-center mb-6">Registro</h2>
 
       <form id="registroForm" class="space-y-4">
@@ -46,7 +45,7 @@ import Footer from "../../components/Footer.astro";
           type="date"
           id="fecha"
           required
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-black"
+          class=" px-4 py-2 border w-[155px] ml-[30%] text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400  "
         />
 
         <button
@@ -84,6 +83,8 @@ import Footer from "../../components/Footer.astro";
 
       localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
       alert("¡Registro guardado correctamente!");
+                window.location.href = "/admin ";  
+
       document.getElementById("registroForm").reset();
     });
   </script>
