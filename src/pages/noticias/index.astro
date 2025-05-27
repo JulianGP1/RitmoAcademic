@@ -1,15 +1,15 @@
 ---
 import Head from "../../components/head.astro"
 import Footer from "../../components/Footer.astro";
-
+import HeadAdmin from "../../components/HeadAdmin.astro";
 ---
-<!DOCTYPE html>
+<Head></Head>
+ 
 <html lang="es">
 
  
 
 <body>
-     <Head></Head>
     <section class="noticias">
         <h2>Últimas Noticias</h2>
         <div class="contenedor-noticias">
@@ -57,9 +57,7 @@ import Footer from "../../components/Footer.astro";
 <style>
     /* Reset base */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  
   background: #101828; /* fondo oscuro */
   color: #fff;
 }
@@ -70,28 +68,8 @@ body {
   max-width: 1200px;
   margin: auto;
 }
-header {
-    background-color: #141218;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
-}
-
-.cabecera {
-    margin-top: 20px;
-    margin-left: 138px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: start;
-}
-
-.encabesado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-}
-
+ 
+ 
 .bicon {
     border-radius: 20%;
 
@@ -103,19 +81,7 @@ header {
     height: 80px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.logo-empresa {
-    height: 80px;
-    border-radius: 20%;
-    margin-right: 10px;
-}
+  
 
 .marca {
     font-size: 2.5em;

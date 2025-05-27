@@ -2,8 +2,12 @@
 import Head from "../../components/head.astro";
 import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
----
+ 
 
+
+---
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 <Head />
 <body class="bg-[#0f0d12] h-screen">
   <div class="bg-[#0f0d12] pb-28 pt-28">
@@ -68,7 +72,9 @@ import Footer from "../../components/Footer.astro";
         const usuario = JSON.parse(datosGuardados);
 
         if (usuario.nombre === username && usuario.contrasena === password) {
-          alert("Inicio de sesión exitoso. Bienvenido " + usuario.nombre + " 👋");
+      
+   
+
           window.location.href = "/admin ";  
         } else {
           alert("Nombre de usuario o contraseña incorrectos.");
