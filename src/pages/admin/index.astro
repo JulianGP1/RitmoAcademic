@@ -1,0 +1,75 @@
+---
+import Head from "../../components/head.astro"
+import "../../styles/global.css";
+import Cursos from "../../components/cardscursos.astro";
+import Footer from "../../components/Footer.astro";
+---
+ 
+    <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Login</title>
+	</head>
+
+<header class="bg-[#141218] p-2 pr-[8%] pl-[5%] sticky z-20 top-0 flex ">
+			<a aria-label="Inicio"  href="/" class="flex gap-2"
+				><img src="public/icon.png" alt="Logo" class="h-[80px] rounded-4xl w-[80px]" />
+				 
+				<span class="text-3xl font-extrabold text-purple-400 pt-5    rounded-3xl  ">
+					Ritmo<span class="text-white">Academic</span>
+			  
+				 
+				<nav class="flex gap-6 items-center	 ">
+					<a
+						href="/#nosotros"
+						class="text-white   hover:text-purple-400 font-semibold  "
+						>Nosotros</a
+					>
+				 
+					<a
+						href="/#contacto"
+						class="text-white hover:text-purple-400 font-semibold"
+						>Contacto</a
+					>
+					<a
+						href="/noticias	"
+						class="text-white hover:text-purple-400 font-semibold  "
+						>Noticias</a
+					>
+				 
+					<a href="/ " 	class="text-white border rounded-sm p-2 ml-[180%] border-purple-400 hover:text-purple-400 font-semibold"> Salir </a>
+				</nav>
+				</a
+			>
+		</header>
+<body class=" ">
+    <div class="flex">
+
+        <section id="menu" class="w-[30%] text-white font-semibold text-[25px] text-center h-screen bg-[#141218]">
+            <h1>Menu</h1>
+        </section>
+        <section class="bg-[#0f0d12] w-[70%]">
+            <div class="mt-10 flex flex-wrap justify-center gap-8">
+                <Cursos
+                titulo="Curso de Guitarra" 
+                descripcion="Aprende desde los acordes básicos hasta técnicas avanzadas con nuestros expertos guitarristas."
+                link="/guitarra"
+				/>
+                
+				<Cursos
+                titulo="Curso de Piano" 
+                descripcion="Domina el teclado con clases interactivas para principiantes y niveles intermedios. Aprende a tu gusto y a tu ritmo."
+                link="/piano"
+				/>
+                
+				<Cursos
+                titulo="Curso de canto vocal"
+                descripcion="Entrena tu voz con profesionales a tu gusto que te guiarán en técnica, pasión, respiración y expresión escénica." 
+                link="/canto"
+				/>
+            </section>
+        </div>
+        </body>
+<Footer></Footer>

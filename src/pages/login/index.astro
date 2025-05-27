@@ -16,7 +16,7 @@ import Footer from "../../components/Footer.astro";
           id="username"
           placeholder="Nombre de usuario"
           required
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full px-4 py-2 border text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
         <input
@@ -24,7 +24,7 @@ import Footer from "../../components/Footer.astro";
           id="password"
           placeholder="Contraseña"
           required
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full px-4 py-2 border text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
         <div class="text-right">
@@ -48,7 +48,7 @@ import Footer from "../../components/Footer.astro";
     </div>
   </div>
 
-  <!-- JS: Validación desde localStorage -->
+ 
   <script is:inline>
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("loginForm");
@@ -69,7 +69,7 @@ import Footer from "../../components/Footer.astro";
 
         if (usuario.nombre === username && usuario.contrasena === password) {
           alert("Inicio de sesión exitoso. Bienvenido " + usuario.nombre + " 👋");
-        window.location.href = "/ ";  
+          window.location.href = "/admin ";  
         } else {
           alert("Nombre de usuario o contraseña incorrectos.");
         }
