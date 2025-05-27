@@ -1,40 +1,50 @@
 ---
 import "../styles/global.css";
 ---
-<header class="bg-[#141218] p-2 px-[10%]  flex justify-between">
-			<a aria-label="Inicio"  href="/" class="flex gap-3"
+    <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Login</title>
+	</head>
+
+<header class="bg-[#141218] p-2 pr-[8%] pl-[5%] sticky z-20 top-0 flex ">
+			<a aria-label="Inicio"  href="/" class="flex gap-2"
 				><img src="public/icon.png" alt="Logo" class="h-[80px] rounded-4xl w-[80px]" />
 				 
-				<span class="text-3xl font-extrabold text-purple-400 pt-5   hover:bg-gray-800 p-4 rounded-3xl  ">
+				<span class="text-3xl font-extrabold text-purple-400 pt-5    rounded-3xl  ">
 					Ritmo<span class="text-white">Academic</span>
 			  
 				 
-				<nav class="flex gap-6 items-center	 pr-5">
+				<nav class="flex gap-6 items-center	 ">
 					<a
-						href="#nosotros"
-						class="text-white hover:text-purple-400 font-semibold"
+						href="/#nosotros"
+						class="text-white   hover:text-purple-400 font-semibold  "
 						>Nosotros</a
 					>
 					<a
-						href="#cursos"
-						class="text-white hover:text-purple-400 border border-purple-400 rounded-md p-2 font-semibold"
+						href="/#cursos"
+						class="text-white hover:text-purple-400 rounded-md p-2 font-semibold"
 						>Cursos</a
 					>
 					<a
-						href="#contacto"
+						href="/#contacto"
 						class="text-white hover:text-purple-400 font-semibold"
 						>Contacto</a
 					>
 					<a
 						href="/noticias	"
-						class="text-white hover:text-purple-400 font-semibold"
+						class="text-white hover:text-purple-400 font-semibold  "
 						>Noticias</a
 					>
 					<a
 						href="/registro	"
-						class="text-white hover:text-purple-400 font-semibold"
+						class="text-white pl-[65%] hover:text-purple-400 font-semibold"
 						>Registro</a
 					>
+					<a href="/login" 	class="text-white hover:text-purple-400 font-semibold">
+					Login</a>
 				</nav>
 				</a
 			>
