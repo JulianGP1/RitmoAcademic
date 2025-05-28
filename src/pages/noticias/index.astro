@@ -4,7 +4,12 @@ import Footer from "../../components/Footer.astro";
 import HeadAdmin from "../../components/HeadAdmin.astro";
 ---
 <div id="admin-header" class="hidden sticky z-20 top-0">
-  <HeadAdmin />
+   <HeadAdmin
+    texto="atras"
+    link="/admin"
+    clases="bg-purple-600   px-4 py-2 rounded hover:bg-purple-800 text-white font-semibold"> 
+     
+  </HeadAdmin>
 </div>
 
 <div id="user-header" class="hidden sticky z-20 top-0">
@@ -13,7 +18,7 @@ import HeadAdmin from "../../components/HeadAdmin.astro";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-if (localStorage.getItem('usuarioRegistrado')) {
+if ((localStorage.getItem('login')=='true')) {
   console.log('La clave existe y tiene un valor:', localStorage.getItem('miClave'));
   document.getElementById('admin-header').classList.remove('hidden');
 

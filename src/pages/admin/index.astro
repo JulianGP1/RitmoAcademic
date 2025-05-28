@@ -1,41 +1,68 @@
 ---
- import Head from "../../components/head.astro";
-import "../../styles/global.css";
+import HeadAdmin from "../../components/HeadAdmin.astro";
 import Cursos from "../../components/cardscursos.astro";
 import Footer from "../../components/Footer.astro";
-import HeadAdmin from "../../components/HeadAdmin.astro";
+import "../../styles/global.css";
 ---
- 
-  <HeadAdmin />
- 
- 
 
-<body class=" ">
-    <div class="flex">
+<HeadAdmin />
 
-        <section id="menu" class="w-[30%] text-white font-semibold text-[25px] text-center h-screen bg-[#141218]">
-            <h1>Menu</h1>
-        </section>
-        <section class="bg-[#0f0d12] w-[70%]">
-            <div class="mt-10 flex flex-wrap justify-center gap-8">
-                <Cursos
-                titulo="Curso de Guitarra" 
-                descripcion="Aprende desde los acordes básicos hasta técnicas avanzadas con nuestros expertos guitarristas."
-                link="/guitarra"
-				/>
-                
-				<Cursos
-                titulo="Curso de Piano" 
-                descripcion="Domina el teclado con clases interactivas para principiantes y niveles intermedios. Aprende a tu gusto y a tu ritmo."
-                link="/piano"
-				/>
-                
-				<Cursos
-                titulo="Curso de canto vocal"
-                descripcion="Entrena tu voz con profesionales a tu gusto que te guiarán en técnica, pasión, respiración y expresión escénica." 
-                link="/canto"
-				/>
-            </section>
-        </div>
-        </body>
-<Footer></Footer>
+<body>
+  <div class="flex">
+    <section class="bg-[#0f0d12] w-full h-[400px]">
+      <div class="mt-10 flex flex-wrap justify-center gap-8">
+        <Cursos
+          class="guitarra"
+          titulo="Curso de Guitarra"
+          descripcion="Aprende desde los acordes básicos hasta técnicas avanzadas con nuestros expertos guitarristas."
+          link="/guitarra"
+        />
+        <Cursos
+          titulo="Curso de Piano"
+          descripcion="Domina el teclado con clases interactivas para principiantes y niveles intermedios. Aprende a tu gusto y a tu ritmo."
+          link="/piano"
+        />
+        <Cursos
+          class="cantocard"
+          titulo="Curso de canto vocal"
+          descripcion="Entrena tu voz con profesionales a tu gusto que te guiarán en técnica, pasión, respiración y expresión escénica."
+          link="/canto"
+        />
+      </div>
+    </section>
+  </div>
+
+ 
+  <Footer />
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const guitarra = document.querySelector('.guitarra');
+    const canto = document.querySelector('.canto');
+
+    if (guitarra && canto) {
+      guitarra.addEventListener('mouseenter', () => {
+        canto.classList.remove('opacity-0');
+        canto.classList.add('opacity-100');
+      });
+
+      guitarra.addEventListener('mouseleave', () => {
+        canto.classList.remove('opacity-100');
+        canto.classList.add('opacity-0');
+      });
+    } else {
+      console.error('No se encontraron los elementos guitarra o canto');
+    }
+  });
+</script>
+
+
+  <style>
+    .guitarra:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      opacity: 1;
+    }
+  </style>
+</body>

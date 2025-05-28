@@ -66,27 +66,42 @@ import Footer from "../../components/Footer.astro";
   </div>
 
   <script>
-    document.getElementById("registroForm").addEventListener("submit", function (event) {
-      event.preventDefault();
+  document.getElementById("registroForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      const nombre = document.getElementById("nombre").value;
-      const contrasena = document.getElementById("contrasena").value;
-      const sexo = document.getElementById("sexo").value;
-      const fecha = document.getElementById("fecha").value;
+    const nombre = document.getElementById("nombre").value;
+    const contrasena = document.getElementById("contrasena").value;
+    const sexo = document.getElementById("sexo").value;
+    const fecha = document.getElementById("fecha").value;
 
-      const usuario = {
-        nombre,
-        contrasena,
-        sexo,
-        fecha,
-      };
+    const usuario = {
+      nombre,
+      contrasena,
+      sexo,
+      fecha,
+    };
 
-      localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
-      alert("¡Registro guardado correctamente!");
-                window.location.href = "/admin ";  
+  
+    let usuarios = JSON.parse(localStorage.getItem("usuariosRegistrados")) || [];
 
-      document.getElementById("registroForm").reset();
-    });
-  </script>
+    
+    usuarios.push(usuario);
+
+  
+    localStorage.setItem("usuariosRegistrados", JSON.stringify(usuarios));
+
+    
+    localStorage.setItem("login", JSON.stringify(true));
+
+    alert("¡Registro guardado correctamente!");
+
+ 
+    window.location.href = "/admin";
+
+   
+    document.getElementById("registroForm").reset();
+  });
+</script>
+
 </body>
 <Footer />

@@ -19,7 +19,12 @@ import "../styles/global.css";
 	</head>
 	<body class="bg-[#0f0d12] bg-fixed text-white font-sans">
 <div id="admin-header" class="hidden sticky z-20 top-0">
-  <HeadAdmin />
+ <HeadAdmin
+    texto="atras"
+    link="/admin"
+    clases="bg-purple-600   px-4 py-2 rounded hover:bg-purple-800 text-white font-semibold"> 
+     
+  </HeadAdmin>
 </div>
 
 <div id="user-header" class="hidden sticky z-20 top-0">
@@ -28,7 +33,7 @@ import "../styles/global.css";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-if (localStorage.getItem('usuarioRegistrado')) {
+if ((localStorage.getItem('login')=='true')) {
   console.log('La clave existe y tiene un valor:', localStorage.getItem('miClave'));
   document.getElementById('admin-header').classList.remove('hidden');
 
@@ -63,6 +68,27 @@ if (localStorage.getItem('usuarioRegistrado')) {
 			              <video src="como.mp4" autoplay loop muted class="">
 
 		</div>
+		</section>
+		<section id="2" class="flex justify-between mx-[10%] mt-16"> 
+			<div class="bg-[#141218] w-[40%] h-auto rounded-2xl shadow-lg p-6">
+				<h2 class="text-2xl font-semibold text-purple-400">¿Qué aprenderás?</h2>
+				<ul class="mt-4 list-disc pl-6">
+					<li>Fundamentos de la música</li>
+					<li>Lectura de partituras</li>
+					<li>Técnicas de interpretación</li>
+					<li>Composición musical</li>
+				</ul>
+
+			</div>
+			<div class="bg-[#141218] w-[%] h-auto rounded-2xl shadow-lg p-6">
+				<h2 class="text-2xl font-semibold text-purple-400">¿A quién va dirigido?</h2>
+				<ul class="mt-4 list-disc pl-6">
+					<li>Estudiantes de música</li>
+					<li>Profesionales que buscan mejorar sus habilidades</li>
+					<li>Amantes de la música que desean aprender</li>
+				</ul>	
+			</div>
+
 		</section>
 		<section id="nosotros" class="  py-16 px-4 text- mt-8 w-[80%] select-none ml-[10%] rounded-2xl shadow-lg">
 			<h2 class="text-3xl font-semibold text-purple-400">Sobre Nosotros</h2>

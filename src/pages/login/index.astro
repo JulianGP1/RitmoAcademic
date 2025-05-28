@@ -2,12 +2,8 @@
 import Head from "../../components/head.astro";
 import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
- 
-
-
 ---
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+
 <Head />
 <body class="bg-[#0f0d12] h-screen">
   <div class="bg-[#0f0d12] pb-28 pt-28">
@@ -51,9 +47,32 @@ import Footer from "../../components/Footer.astro";
       </div>
     </div>
   </div>
+  
+   <div id="alerta" class="fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hidden transition-opacity duration-300">
+    ¡Inicio de sesión exitoso!
+  </div>
 
- 
   <script is:inline>
+    function mostrarAlerta(mensaje, tipo = "success") {
+      const alerta = document.getElementById("alerta");
+      alerta.textContent = mensaje;
+
+       alerta.className = "fixed bottom-4 right-4 px-4 py-2 rounded-lg shadow-md transition-opacity duration-300";
+
+      if (tipo === "success") {
+        alerta.classList.add("bg-green-600", "text-white");
+      } else if (tipo === "error") {
+        alerta.classList.add("bg-red-600", "text-white");
+      }
+
+      alerta.classList.remove("hidden");
+      alerta.classList.add("opacity-100");
+
+      setTimeout(() => {
+        alerta.classList.add("hidden");
+      }, 3000);
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("loginForm");
       form.addEventListener("submit", function (e) {
@@ -62,22 +81,35 @@ import Footer from "../../components/Footer.astro";
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value;
 
-        const datosGuardados = localStorage.getItem("usuarioRegistrado");
+        const datosGuardados = localStorage.getItem("usuariosRegistrados");
 
         if (!datosGuardados) {
-          alert("No hay ningún usuario registrado.");
+          mostrarAlerta("No hay ningún usuario registrado.", "error");
           return;
         }
 
-        const usuario = JSON.parse(datosGuardados);
+        const usuarios = JSON.parse(datosGuardados);
+        let usuarioEncontrado = false;
 
-        if (usuario.nombre === username && usuario.contrasena === password) {
-      
-   
+        for (let i = 0; i < usuarios.length; i++) {
+          if (usuarios[i].nombre === username && usuarios[i].contrasena === password) {
+            usuarioEncontrado = true;
 
-          window.location.href = "/admin ";  
-        } else {
-          alert("Nombre de usuario o contraseña incorrectos.");
+            localStorage.setItem("login", JSON.stringify(true));
+            localStorage.setItem("usuarioActual", JSON.stringify(usuarios[i]));
+
+            mostrarAlerta("¡Inicio de sesión exitoso!", "success");
+
+             setTimeout(() => {
+              window.location.href = "/admin";
+            }, 400);
+            
+            break;
+          }
+        }
+
+        if (!usuarioEncontrado) {
+          mostrarAlerta("Nombre de usuario o contraseña incorrectos.", "error");
         }
       });
     });

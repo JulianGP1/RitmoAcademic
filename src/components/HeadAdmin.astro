@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css"
  
+const { link,texto,clases } = Astro.props;
 
 ---
 <head>
@@ -39,18 +40,31 @@ import "../styles/global.css"
 						>Noticias</a
 					>
 				 
-   <button   id="logoutBtn"  class="bg-purple-600 ml-[150%] px-4 py-2 rounded hover:bg-purple-800"  >
-    Salir
-  </button>				</nav> 
+					<div class="ml-[80%] flex ">
+						<a id="atras" href={link} class={clases}>
+						 
+						{texto} 
+					</a>
+				 
+                  <button   id="logoutBtn"  class="bg-purple-600 font-semibold ml-5 fix  text-white px-4 py-2 rounded hover:bg-purple-800"  >
+                    Salir
+                  </button>	
+					</div>
+						
+						</nav> 
 				</a
 			>
 		</header>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("logoutBtn");
+    const btnatras = document.getElementById("atras");
     btn?.addEventListener("click", () => {
-      localStorage.clear(); // Borra todos los valores
+localStorage.setItem('login', 'false');
       window.location.href = "/"; // Redirige a la página de login
+    });
+    btnatras?.addEventListener("click", () => {
+       window.location.href = "/admin"; // Redirige a la página de login
     });
   });
 </script>
