@@ -6,32 +6,10 @@ import Footer from "../../components/Footer.astro";
 import HeadAdmin from "../../components/HeadAdmin.astro";
 ---
  
-    <head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/logo.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Login</title>
-	</head>
-
- <div id="admin-header" style="display: none;">
   <HeadAdmin />
-</div>
-<div id="user-header" style="display: none;">
-  <Head />
-</div>
+ 
+ 
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("usuario") || localStorage.getItem("token") || localStorage.getItem("status");
-    
-    if (!token) {
-      document.getElementById("admin-header").style.display = "block";
-    } else {
-      document.getElementById("user-header").style.display = "block";
-    }
-  });
-</script>
 <body class=" ">
     <div class="flex">
 

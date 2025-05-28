@@ -39,7 +39,7 @@ import "../styles/global.css"
 						>Noticias</a
 					>
 				 
-   <button   id="logoutBtn" class="bg-purple-600 ml-[150%] px-4 py-2 rounded hover:bg-purple-800"  >
+   <button   id="logoutBtn"  class="bg-purple-600 ml-[150%] px-4 py-2 rounded hover:bg-purple-800"  >
     Salir
   </button>				</nav> 
 				</a
@@ -50,7 +50,7 @@ import "../styles/global.css"
     const btn = document.getElementById("logoutBtn");
     btn?.addEventListener("click", () => {
       localStorage.clear(); // Borra todos los valores
-      window.location.href = "/login"; // Redirige a la página de login
+      window.location.href = "/"; // Redirige a la página de login
     });
   });
 </script>
